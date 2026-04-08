@@ -1,0 +1,328 @@
+/*Classes*/
+
+.chewy{
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text_files{
+  position: relative;
+  font-size: 2em;
+  left: 0.75em;
+  color: #BEB1F6;
+  text-decoration: none;
+}
+
+.folder{
+  height: 200px;
+  width: 200px;
+  text-decoration: none;
+}
+
+.imagen_folder{
+  height: 150px;
+  width: 200px;
+}
+
+.exit_button{
+  position: fixed;
+  top:2em;
+  left: 98em;
+  z-index: 2;
+}
+
+.about_me_images{
+  position: fixed;
+}
+
+.modal{
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  background-color: #FFFFFF;
+  padding:  20px 20px;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+  width: 375px;
+}
+
+.right{
+  size: 10px;
+  position: fixed;
+  right:5em;
+  top: 0;
+  height: 100%;
+}
+
+.left{
+  size: 10px;
+  position: fixed;
+  left:5em;
+  top: 0;
+  height: 100%;
+}
+
+.modal_wrapper{
+  width: 100%;
+  display: none;
+}
+
+.bunny{
+  height: 15em;
+  width: auto;
+  align-self: center;
+  padding: 2em;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.bunny.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal_title{
+  text-align: center;
+}
+
+.nav_ill{
+  position: absolute;
+  top: 3.5em;
+  transform: translateY(-50%);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 5em;
+  height: auto;
+  border-radius: 1.5em;
+  z-index: 2;
+}
+
+.prev_ill { left: 70%; }
+.next_ill { right: 18%; }
+
+/*IDs*/
+
+#inicio {
+  position: fixed;
+  object-position: center bottom;
+  top: -60px;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -1; 
+}
+
+#start_button{
+    position: fixed;
+    top:45em;
+    left:70.5em;
+    z-index: 1;
+}
+
+#start_text{
+    position: fixed;
+    font-size: 45px;
+    color: #F9F0FF;
+    top:16.45em;
+    left:28.3em;
+    z-index: 1;
+}
+
+#main_background{
+  position: fixed;
+  object-fit: fill;
+  object-position: center bottom;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#about_me{
+  position: absolute;
+  top: 14em;
+  left: 26em;
+}
+
+#animations{
+  position: absolute;
+  top: 14em;
+  left: 60em;
+
+}
+
+#illustrations{
+  position: absolute;
+  top: 14em;
+  left: 93em;
+
+}
+
+#experience{
+  position: absolute;
+  top: 32em;
+  left: 26em;
+}
+
+#abilities{
+  position: absolute;
+  top: 32em;
+  left: 60em;
+}
+
+#contact{
+  position: absolute;
+  top: 32em;
+  left: 93em;
+}
+
+#hearth{
+  left:41em;
+  top:9em;
+  z-index: 1;
+}
+
+#hand{
+  left:35em;
+  top:11em;
+  z-index: 0;
+}
+
+#dog{
+  left:33.75em;
+  top:23em;
+  z-index: 0;
+}
+
+#paws{
+  left:41em;
+  top:27em;
+  z-index: 2;
+}
+
+#flowers{
+  left:68.5em;
+  top:13em;
+  z-index: 0;
+}
+
+#pieces{
+  left:65em;
+  top:42em;
+  z-index: 0;
+}
+
+#star{
+  left:24em;
+  top:39em;
+  z-index: 2;
+}
+
+#bulb{
+  left:69em;
+  top:25em;
+  z-index: 0;
+}
+
+
+
+/* Exoperience functionalities */
+
+#carousel{
+  position: fixed;
+  object-fit: fill;
+  object-position: center center;
+  width: 90%;
+  height: 90%;
+  top: 12%;
+  bottom: 0%;
+  left:5.5%;
+  z-index: 0;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+.carousel {
+  display: flex;
+  height: 70%;
+  width: 100%;
+  justify-content:space-between;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 5em;
+  height: auto;
+  border-radius: 1.5em;
+  z-index: 3;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+#active {
+  position: absolute;
+  bottom: 12%;
+  left: 35%;
+  opacity: 1;
+  transform: "translateX(0) scale(1)",;
+  z-index: 3;
+}
+
+.carousel-item {
+  position: absolute;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+  width: 25%;
+  height: auto;
+  z-index: 1;
+  opacity: 0.5;
+  bottom: 20%;
+  
+}
+
+#prev_inactive{
+  left: 22%;
+  transform: translateX(-3vw) scale(0.9);
+}
+
+#next_inactive{
+  right: 20%;
+  transform: translateX(3vw) scale(0.9);
+
+}
+
+#active, .carousel-item {
+  transition: transform 0.4s ease;
+}
+
+#hidden{
+  position: absolute;
+  bottom: 13%;
+  left: 35%;
+  opacity: 0;
+  transform: "translateX(0) scale(0.5)",;
+  z-index: 0;
+}
