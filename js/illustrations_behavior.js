@@ -1,6 +1,6 @@
 const prev_btn = document.getElementById("nav_prev_ill");
 const next_btn = document.getElementById("nav_next_ill");
-const background = document.getElementById("main_background");
+const background = document.getElementById("inicio");
 
 let index = 0;
 

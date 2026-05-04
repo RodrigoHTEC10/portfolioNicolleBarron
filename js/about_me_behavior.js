@@ -31,6 +31,82 @@ let last_modal_left = "";
 let right_active = false;
 let left_active = false;
 
+
+
+// Helper to open/update a side
+function openRight(key) {
+    content_right.innerHTML = contents[key];
+    right_modal.style.display = "block";
+    right_bunny.classList.add("visible");
+    right_active = true;
+    last_modal_right = key;
+}
+
+function closeRight() {
+    right_modal.style.display = "none";
+    right_bunny.classList.remove("visible");
+    right_active = false;
+    last_modal_right = "";
+}
+
+function openLeft(key) {
+    content_left.innerHTML = contents[key];
+    left_modal.style.display = "block";
+    left_bunny.classList.add("visible");
+    left_active = true;
+    last_modal_left = key;
+}
+
+function closeLeft() {
+    left_modal.style.display = "none";
+    left_bunny.classList.remove("visible");
+    left_active = false;
+    last_modal_left = "";
+}
+
+
+hearth.addEventListener("click", () => {
+    if (right_active && last_modal_right === "hearth") closeRight();
+    else openRight("hearth");  
+})
+
+hand.addEventListener("click", () => {
+    if (right_active && last_modal_right === "hand") closeRight();
+    else openRight("hand");
+})
+
+dog.addEventListener("click", () => {
+    if (right_active && (last_modal_right === "dog" || last_modal_right === "paws")) closeRight();
+    else openRight("dog");
+})
+
+paws.addEventListener("click", () => {
+    if (right_active && (last_modal_right === "dog" || last_modal_right === "paws")) closeRight();
+    else openRight("dog");
+})
+
+star.addEventListener("click", () => {
+    if (right_active && last_modal_right === "star") closeRight();
+    else openRight("star");
+})
+
+flowers.addEventListener("click", () => {
+    if (left_active && last_modal_left === "flowers") closeLeft();
+    else openLeft("flowers");
+})
+
+pieces.addEventListener("click", () => {
+    if (left_active && last_modal_left === "pieces") closeLeft();
+    else openLeft("pieces");
+})
+
+bulb.addEventListener("click", () => {
+    if (left_active && last_modal_left === "bulb") closeLeft();
+    else openLeft("bulb");
+})
+
+
+
 //About_Me Functions
 //Hearth
 hearth.addEventListener("mouseover", ()=>{
@@ -46,26 +122,6 @@ hearth.addEventListener("mouseout", ()=>{
     
 })
 
-hearth.addEventListener("click", ()=>{
-    if(click_counter_right==1 && right_active && (last_modal_right=="hearth")){
-        right_modal.style.display="none";
-        right_bunny.classList.remove("visible");
-        right_active=false;
-        click_counter_right=0;
-        last_modal_right="";
-    }
-    else if(!right_active){
-        right_modal.style.display="block";
-        right_bunny.classList.add("visible");
-        click_counter_right++;
-        right_active = true;
-        last_modal_right="hearth";
-        content_right.innerHTML = contents.hearth;
-    }
-})
-
-
-
 //Hand
 hand.addEventListener("mouseover", ()=>{
     hand.src="../media/about_me/hand_on.png";
@@ -75,28 +131,10 @@ hand.addEventListener("mouseover", ()=>{
 
 hand.addEventListener("mouseout", ()=>{
     hand.src="../media/about_me/hand_off.png";
-    right_bunny.classList.remove("visible");
-})
-
-hand.addEventListener("click", ()=>{
-    if(click_counter_right==1 && right_active && (last_modal_right=="hand")){
-        right_modal.style.display="none";
+    if(!right_active){
         right_bunny.classList.remove("visible");
-        right_active=false;
-        click_counter_right=0;
-        last_modal_right="";
-    }
-    else if(!right_active){
-        right_modal.style.display="block";
-        right_bunny.classList.add("visible");
-        click_counter_right++;
-        right_active = true;
-        last_modal_right="hand";
-
-        content_right.innerHTML = contents.hand;
     }
 })
-
 
 //Dog
 dog.addEventListener("mouseover", ()=>{
@@ -108,24 +146,8 @@ dog.addEventListener("mouseover", ()=>{
 dog.addEventListener("mouseout", ()=>{
     dog.src="../media/about_me/dog_head_off.png";
     paws.src="../media/about_me/paws_off.png";
-    right_bunny.classList.remove("visible");
-})
-
-dog.addEventListener("click", ()=>{
-    if(click_counter_right==1 && right_active && (last_modal_right=="dog" || last_modal_right=="paws")){
-        right_modal.style.display="none";
+    if(!right_active){
         right_bunny.classList.remove("visible");
-        right_active=false;
-        click_counter_right=0;
-        last_modal_right="";
-    }
-    else if(!right_active){
-        right_modal.style.display="block";
-        right_bunny.classList.add("visible");
-        click_counter_right++;
-        right_active = true;
-        last_modal_right="dog";
-        content_right.innerHTML = contents.dog;
     }
 })
 
@@ -140,26 +162,8 @@ paws.addEventListener("mouseover", ()=>{
 paws.addEventListener("mouseout", ()=>{
     dog.src="../media/about_me/dog_head_off.png";
     paws.src="../media/about_me/paws_off.png";
-    right_bunny.classList.remove("visible");
-})
-
-paws.addEventListener("click", ()=>{
-    if(click_counter_right==1 && right_active && (last_modal_right=="dog" || last_modal_right=="paws")){
-        right_modal.style.display="none";
+    if(!right_active){
         right_bunny.classList.remove("visible");
-        right_active=false;
-        click_counter_right=0;
-        last_modal_right="";
-    }
-    else if(!right_active){
-        right_modal.style.display="block";
-        right_bunny.classList.add("visible");
-        click_counter_right++;
-        right_active = true;
-        last_modal_right="paws";
-
-        title_right.textContent = titles.dog;
-        content_right.innerHTML = contents.dog;
     }
 })
 
@@ -172,25 +176,8 @@ flowers.addEventListener("mouseover", ()=>{
 
 flowers.addEventListener("mouseout", ()=>{
     flowers.src="../media/about_me/flower_off.png";
-    left_bunny.classList.remove("visible");
-})
-
-flowers.addEventListener("click", ()=>{
-    if(click_counter_left==1 && left_active && (last_modal_left=="flowers")){
-        left_modal.style.display="none";
+    if(!left_active){
         left_bunny.classList.remove("visible");
-        left_active=false;
-        click_counter_left=0;
-        last_modal_left="";
-    }
-    else if(!left_active){
-        left_modal.style.display="block";
-        left_bunny.classList.add("visible");
-        click_counter_left++;
-        left_active = true;
-        last_modal_left="flowers";
-
-        content_left.innerHTML = contents.flowers;
     }
 })
 
@@ -203,28 +190,10 @@ pieces.addEventListener("mouseover", ()=>{
 
 pieces.addEventListener("mouseout", ()=>{
     pieces.src="../media/about_me/pieces_off.png";
-    left_bunny.classList.remove("visible");
-})
-
-pieces.addEventListener("click", ()=>{
-    if(click_counter_left==1 && left_active && (last_modal_left=="pieces")){
-        left_modal.style.display="none";
+    if(!left_active){
         left_bunny.classList.remove("visible");
-        left_active=false;
-        click_counter_left=0;
-        last_modal_left="";
-    }
-    else if(!left_active){
-        left_modal.style.display="block";
-        left_bunny.classList.add("visible");
-        click_counter_left++;
-        left_active = true;
-        last_modal_left="pieces";
-
-        content_left.innerHTML = contents.pieces;
     }
 })
-
 
 //Star
 star.addEventListener("mouseover", ()=>{
@@ -234,28 +203,10 @@ star.addEventListener("mouseover", ()=>{
 
 star.addEventListener("mouseout", ()=>{
     star.src="../media/about_me/star_off.png";
-    right_bunny.classList.remove("visible");
-})
-
-star.addEventListener("click", ()=>{
-    if(click_counter_right==1 && right_active && (last_modal_right=="star")){
-        right_modal.style.display="none";
-        right_active=false;
-        click_counter_right=0;
-        last_modal_right="";
+    if(!right_active){
         right_bunny.classList.remove("visible");
     }
-    else if(!right_active){
-        right_modal.style.display="block";
-        click_counter_right++;
-        right_active = true;
-        last_modal_right="star";
-        right_bunny.classList.add("visible");
-
-        content_right.innerHTML = contents.star;
-    }
 })
-
 
 //Bulb
 bulb.addEventListener("mouseover", ()=>{
@@ -265,24 +216,7 @@ bulb.addEventListener("mouseover", ()=>{
 
 bulb.addEventListener("mouseout", ()=>{
     bulb.src="../media/about_me/bulb_off.png";
-    left_bunny.classList.remove("visible");
-})
-
-bulb.addEventListener("click", ()=>{
-    if(click_counter_left==1 && left_active && (last_modal_left=="bulb")){
-        left_modal.style.display="none";
+    if(!left_active){
         left_bunny.classList.remove("visible");
-        left_active=false;
-        click_counter_left=0;
-        last_modal_left="";
-    }
-    else if(!left_active){
-        left_modal.style.display="block";
-        left_bunny.classList.add("visible");
-        click_counter_left++;
-        left_active = true;
-        last_modal_left="bulb";
-
-        content_left.innerHTML = contents.bulb;
     }
 })

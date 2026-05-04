@@ -30,6 +30,7 @@ const carousel = [
 const DURATION = 500;
 
 function slide(direction) {
+
   if (isAnimating) return;
   isAnimating = true;
 
@@ -38,9 +39,9 @@ function slide(direction) {
 
   const positions = {
     left:  "translateX(-3vw) scale(0.9)",
-    center:"translateX(0) scale(1)",
+    center:"translateX(-15vw) scale(1)",
     right: "translateX(3vw) scale(0.9)",
-    hidden: "translateX(0) scale(0.5)"
+    hidden: "translateX(-12vw) scale(0.5)"
   };
 
   // --- ANIMATION PHASE ---
@@ -48,7 +49,7 @@ function slide(direction) {
 
     // Center → Right
     active.style.transition = moveTrans;
-    active.style.transform  = "translateX(17.7vw) scale(0.65)"
+    active.style.transform  = "translateX(4vw) scale(0.55)"
     active.style.opacity    = "0.5";
 
     // Right fades out
@@ -57,28 +58,24 @@ function slide(direction) {
 
     // Left → Center
     inactive_prev.style.transition = moveTrans;
-    inactive_prev.style.transform  = "translateX(18vw) scale(1.4)"
+    inactive_prev.style.transform  = "translateX(17vw) scale(1.8)"
     inactive_prev.style.opacity    = "1";
 
     //Hidden -> Left
     hidden.style.transition = moveTrans;
-    hidden.style.transform  = "translateX(-22vw) scale(0.6)"
+    hidden.style.transform  = "translateX(-29vw) scale(0.72)"
     hidden.style.opacity    = "0.5";
     
-
-
-
-
 
   } else {
     // Center → Left
     active.style.transition = moveTrans;
-    active.style.transform  = "translateX(-20vw) scale(0.65)"
+    active.style.transform  = "translateX(-35vw) scale(0.5)"
     active.style.opacity    = "0.5";
 
     // Right → Center
     inactive_next.style.transition = moveTrans;
-    inactive_next.style.transform  = "translateX(-14.5vw) scale(1.4)"
+    inactive_next.style.transform  = "translateX(-14.75vw) scale(1.8)"
     inactive_next.style.opacity    = "1";
 
     // Left fades out
@@ -87,7 +84,7 @@ function slide(direction) {
 
     //Hidden -> Right
     hidden.style.transition = moveTrans;
-    hidden.style.transform  = "translateX(17.5vw) scale(0.62)"
+    hidden.style.transform  = "translateX(8.75vw) scale(0.75)"
     hidden.style.opacity    = "0.5";
   }
 

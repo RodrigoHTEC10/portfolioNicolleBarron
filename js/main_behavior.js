@@ -10,7 +10,7 @@ const contact = document.getElementById("contact");
 about_me.addEventListener("mouseover", ()=>{
     const image = document.getElementById("about_me_button");
     image.src="../media/main/about_me_open.png";
-    image.style.width="220px";
+    image.style.width="110%";
     const nestedTitle = about_me.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#FD6983";
@@ -20,7 +20,7 @@ about_me.addEventListener("mouseover", ()=>{
 about_me.addEventListener("mouseout", ()=>{
     const image = document.getElementById("about_me_button");
     image.src="../media/main/about_me_closed.png";
-    image.style.width="200px";
+    image.style.width="100%";
     const nestedTitle = about_me.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#BEB1F6";
@@ -33,7 +33,7 @@ about_me.addEventListener("mouseout", ()=>{
 animations.addEventListener("mouseover", ()=>{
     const image = document.getElementById("animations_button");
     image.src="../media/main/animation_open.png";
-    image.style.width="220px";
+    image.style.width="110%";
     const nestedTitle = animations.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#FC9959";
@@ -43,7 +43,7 @@ animations.addEventListener("mouseover", ()=>{
 animations.addEventListener("mouseout", ()=>{
     const image = document.getElementById("animations_button");
     image.src="../media/main/animation_closed.png";
-    image.style.width="200px";
+    image.style.width="100%";
     const nestedTitle = animations.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#BEB1F6";
@@ -55,7 +55,7 @@ animations.addEventListener("mouseout", ()=>{
 illustrations.addEventListener("mouseover", ()=>{
     const image = document.getElementById("illustrations_button");
     image.src="../media/main/illustration_open.png";
-    image.style.width="220px";
+    image.style.width="110%";
     const nestedTitle = illustrations.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#FEFA9B";
@@ -65,7 +65,7 @@ illustrations.addEventListener("mouseover", ()=>{
 illustrations.addEventListener("mouseout", ()=>{
     const image = document.getElementById("illustrations_button");
     image.src="../media/main/illustration_closed.png";
-    image.style.width="200px";
+    image.style.width="100%";
     const nestedTitle = illustrations.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#BEB1F6";
@@ -78,7 +78,7 @@ illustrations.addEventListener("mouseout", ()=>{
 experience.addEventListener("mouseover", ()=>{
     const image = document.getElementById("experience_button");
     image.src="../media/main/experience_open.png";
-    image.style.width="220px";
+    image.style.width="110%";
     const nestedTitle = experience.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#6FF2AD";
@@ -88,7 +88,7 @@ experience.addEventListener("mouseover", ()=>{
 experience.addEventListener("mouseout", ()=>{
     const image = document.getElementById("experience_button");
     image.src="../media/main/experience_closed.png";
-    image.style.width="200px";
+    image.style.width="100%";
     const nestedTitle = experience.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#BEB1F6";
@@ -101,7 +101,7 @@ experience.addEventListener("mouseout", ()=>{
 abilities.addEventListener("mouseover", ()=>{
     const image = document.getElementById("abilities_button");
     image.src="../media/main/abilities_open.png";
-    image.style.width="220px";
+    image.style.width="110%";
     const nestedTitle = abilities.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#6794FD";
@@ -111,7 +111,7 @@ abilities.addEventListener("mouseover", ()=>{
 abilities.addEventListener("mouseout", ()=>{
     const image = document.getElementById("abilities_button");
     image.src="../media/main/abilities_closed.png";
-    image.style.width="200px";
+    image.style.width="100%";
     const nestedTitle = abilities.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#BEB1F6";
@@ -124,7 +124,7 @@ abilities.addEventListener("mouseout", ()=>{
 contact.addEventListener("mouseover", ()=>{
     const image = document.getElementById("contact_button");
     image.src="../media/main/contact_open.png";
-    image.style.width="220px";
+    image.style.width="110%";
     const nestedTitle = contact.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#E488F1";
@@ -134,7 +134,7 @@ contact.addEventListener("mouseover", ()=>{
 contact.addEventListener("mouseout", ()=>{
     const image = document.getElementById("contact_button");
     image.src="../media/main/contact_closed.png";
-    image.style.width="200px";
+    image.style.width="100%";
     const nestedTitle = contact.querySelector('span');
     if(nestedTitle){
         nestedTitle.style.color="#BEB1F6";

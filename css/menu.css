@@ -1,0 +1,72 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f9a8c9;
+    overflow: hidden;
+}
+
+#scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 100vh;
+    container-type: inline-size;
+}
+
+#inicio {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.chewy{
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+#folder_grid {
+    position: absolute;
+    top: 22%;
+    left: 22%;
+    width: 70%;
+    height: 45%;         
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2% 18%;
+}
+
+.folder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.imagen_folder {
+    width: 100%;
+    height: auto;
+}
+
+.exit_button{
+    position: absolute;
+    top:4%;
+    right: 2%;
+    width: 4%;
+    z-index: 2;
+}
+
+.text_files {
+    font-size: clamp(0.5rem, 2cqw, 1.4rem);
+    color: #BEB1F6;
+    margin-top: 4%;
+    text-align: center;
+}

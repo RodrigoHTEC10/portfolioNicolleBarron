@@ -7,17 +7,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <video autoplay loop id="inicio">
-        <source src="./media/FINALPORTADA.mp4" type="video/mp4">
-    </video>
-    <a id="start_button" href="./html/menu.html">
-        <img src="./media/button.png">
-        <span id="start_text" class="chewy">Start</span>
-    </a>
-    
+    <div id="scene">
+        <video id="inicio" autoplay loop muted playsinline>
+            <source src="./media/FINALPORTADA.mp4" type="video/mp4">
+        </video>
+        <a id="start_button" href="./html/menu.html">
+            <img src="./media/button.png" alt="Start">
+            <span class="chewy">Start</span>
+        </a>
+    </div>
 </body>
-<script src="./js/behavior.js"></script>
+<script>
+const video = document.getElementById('inicio');
+video.play().catch(() => {
+  // If autoplay is blocked, play on first user interaction
+  document.addEventListener('click', () => video.play(), { once: true });
+});
+</script>
 </html>
