@@ -14,6 +14,7 @@ let index_next     = 2;
 let index_carousel = 0;
 let index_hidden = 3;
 let isAnimating    = false;
+let actualActive = 'coralia';
 
 const horses = [
   "../media/experience/canis.png",
@@ -21,6 +22,13 @@ const horses = [
   "../media/experience/cuento.png",
   "../media/experience/personajes.png",
 ];
+
+const horses_indexes = [
+  "canis",
+  "coralia",
+  "cuento",
+  "personajes"
+]
 
 const carousel = [
   "../media/experience/car_1.png",
@@ -114,6 +122,7 @@ function slide(direction) {
     inactive_next.src    = horses[index_next];
     carousel_element.src = carousel[index_carousel];
     hidden.src = horses[index_hidden];
+    actualActive = horses_indexes[index_active];
 
     // --- RESET POSITIONS (NO FLICKER) ---
     active.style.transition = "none";
@@ -149,3 +158,98 @@ function slide(direction) {
 prev_btn.addEventListener("click", () => slide("prev"));
 next_btn.addEventListener("click", () => slide("next"));
 
+// ---------------- POPUP Management --------------------
+
+const overlay = document.getElementById("popup_overlay");
+const popup = document.getElementById("popup");
+
+// Open
+function openPopup() {
+    overlay.classList.add("visible");
+}
+
+
+active.addEventListener("click", () => {
+  buildPopup(actualActive);
+  openPopup();
+})
+
+// Close on X button
+document.querySelector(".popup_close").addEventListener("click", () => {
+    overlay.classList.remove("visible");
+});
+
+// Close on clicking the dark overlay outside the popup
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.classList.remove("visible");
+    }
+})
+
+pages =  {
+  "canis": ["url('../media/experience/canis/can1.jpg')","url('../media/experience/canis/can_link.jpg')"],
+  "coralia": ["url('../media/experience/coralia/cor1.jpg')","url('../media/experience/coralia/cor_link.jpg')" ],
+  "cuento": ["url('../media/experience/cuento/cue1.jpg')","url('../media/experience/cuento/cue_link.jpg')"],
+  "personajes": ["url('../media/experience/personajes/per1.png')"]
+}
+
+buttons =  {
+  "canis": "../media/experience/coralia/button_coralia.png",
+  "coralia": "../media/experience/coralia/button_coralia.png",
+  "cuento": "../media/experience/right_btn.png",
+  "personajes":"../media/experience/right_btn.png"
+}
+
+
+
+let currentPage = 0;
+
+function buildPopup(horseName) {
+    currentPage = 0;
+
+    popup.style.backgroundImage = pages[horseName][0];
+    popup.style.backgroundSize = "100% 100%";
+
+    const existing = popup.querySelector(".popup_nav");
+    if (existing) existing.remove();
+
+    if (pages[horseName].length > 1) {
+        const nav = document.createElement("div");
+        nav.classList.add("popup_nav");
+        nav.innerHTML = `
+            <button class="popup_prev chewy" disabled>
+              <img style="transform: rotate(180deg); width:42%;" src="${buttons[horseName]}">
+            </button>
+            <button class="popup_next chewy">
+              <img style="width:42%;" src="${buttons[horseName]}">
+            </button>
+        `;
+        popup.appendChild(nav);
+
+        const prevBtn = nav.querySelector(".popup_prev");
+        const nextBtn = nav.querySelector(".popup_next");
+
+        nextBtn.addEventListener("click", () => {
+            if (currentPage < pages[horseName].length - 1) {
+                currentPage++;
+                updatePopupPage(horseName, currentPage, prevBtn, nextBtn);
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePopupPage(horseName, currentPage, prevBtn, nextBtn);
+            }
+        });
+    }
+
+    openPopup();
+}
+
+function updatePopupPage(horseName, page, prevBtn, nextBtn) {
+    popup.style.backgroundImage = pages[horseName][page];
+    popup.style.backgroundSize = "100% 100%";
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page === pages[horseName].length - 1;
+}

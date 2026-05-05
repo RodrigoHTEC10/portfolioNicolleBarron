@@ -34,14 +34,14 @@ body {
 
 #folder_grid {
     position: absolute;
-    top: 22%;
+    top: 23%;
     left: 22%;
     width: 70%;
     height: 45%;         
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 2% 18%;
+    gap: 3% 18%;
 }
 
 .folder {
@@ -49,11 +49,21 @@ body {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    justify-content: flex-start;
 }
 
 .imagen_folder {
     width: 100%;
-    height: auto;
+    display: block;
+    height: 10cqw;        
+    object-fit: contain;
+    transform: scale(1);
+    transform-origin: top center;
+    transition: transform 0.2s ease;
+}
+
+.folder:hover .imagen_folder {
+    transform: scale(1.1);
 }
 
 .exit_button{
@@ -67,6 +77,6 @@ body {
 .text_files {
     font-size: clamp(0.5rem, 2cqw, 1.4rem);
     color: #BEB1F6;
-    margin-top: 4%;
+    margin-top: 5%;
     text-align: center;
 }

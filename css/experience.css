@@ -31,8 +31,15 @@ body {
     font-style: normal;
 }
 
+.exit_button{
+    position: absolute;
+    top:4%;
+    right: 2%;
+    width: 4%;
+    z-index: 2;
+}
 
-/*REFACTORED CSS*/
+/*REFACTORED CSS CARROUSEL*/
 .carousel-wrapper {
     position: absolute;
     bottom: 0;
@@ -114,3 +121,85 @@ body {
     opacity: 0;
     z-index: 0;
 }
+
+/*REFACTORED POPUP*/
+/* Dark translucent layer covering the whole screen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup {
+    position: relative;
+    width: 80%;          /* tune to taste */
+    max-height: 80%;
+    height: 100%;
+    background: white;   /* or use one of the artist's PNGs as background-image */
+    border-radius: 2cqw;
+    padding: 3%;
+    overflow-y: auto;
+    z-index: 11;
+}
+
+.popup_close {
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    width: 100%;
+    background: none;
+    border: none;
+    font-size: clamp(0.8rem, 2cqw, 1.5rem);
+    cursor: pointer;
+    color: #BEB1F6;
+}
+
+.popup_content {
+    font-size: clamp(0.5rem, 1.8cqw, 1.1rem);
+}
+
+.popup_nav {
+    position: absolute;
+    width: 95%;
+    bottom: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 75%;
+}
+
+.popup_prev,
+.popup_next {
+    background: none;
+    border: none;
+    font-size: clamp(0.8rem, 2cqw, 1.5rem);
+    cursor: pointer;
+    color: #BEB1F6;
+}
+
+.popup_prev:disabled,
+.popup_next:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.popup_page {
+    font-size: clamp(0.5rem, 1.5cqw, 1rem);
+    color: #BEB1F6;
+}
+

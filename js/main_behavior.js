@@ -7,136 +7,57 @@ const contact = document.getElementById("contact");
 
 //About_Me Functions
 //#FD6983
-about_me.addEventListener("mouseover", ()=>{
-    const image = document.getElementById("about_me_button");
-    image.src="../media/main/about_me_open.png";
-    image.style.width="110%";
-    const nestedTitle = about_me.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#FD6983";
-    }
+
+about_me.addEventListener("mouseover", () => {
+    document.getElementById("about_me_button").src = "../media/main/about_me_open.png";
+    about_me.querySelector('span').style.color = "#FD6983";
+})
+about_me.addEventListener("mouseout", () => {
+    document.getElementById("about_me_button").src = "../media/main/about_me_closed.png";
+    about_me.querySelector('span').style.color = "#BEB1F6";
 })
 
-about_me.addEventListener("mouseout", ()=>{
-    const image = document.getElementById("about_me_button");
-    image.src="../media/main/about_me_closed.png";
-    image.style.width="100%";
-    const nestedTitle = about_me.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#BEB1F6";
-    }
+animations.addEventListener("mouseover", () => {
+    document.getElementById("animations_button").src = "../media/main/animation_open.png";
+    animations.querySelector('span').style.color = "#FC9959";
+})
+animations.addEventListener("mouseout", () => {
+    document.getElementById("animations_button").src = "../media/main/animation_closed.png";
+    animations.querySelector('span').style.color = "#BEB1F6";
 })
 
-
-//About_Me Functions
-//#FC9959
-animations.addEventListener("mouseover", ()=>{
-    const image = document.getElementById("animations_button");
-    image.src="../media/main/animation_open.png";
-    image.style.width="110%";
-    const nestedTitle = animations.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#FC9959";
-    }
+illustrations.addEventListener("mouseover", () => {
+    document.getElementById("illustrations_button").src = "../media/main/illustration_open.png";
+    illustrations.querySelector('span').style.color = "#FEFA9B";
+})
+illustrations.addEventListener("mouseout", () => {
+    document.getElementById("illustrations_button").src = "../media/main/illustration_closed.png";
+    illustrations.querySelector('span').style.color = "#BEB1F6";
 })
 
-animations.addEventListener("mouseout", ()=>{
-    const image = document.getElementById("animations_button");
-    image.src="../media/main/animation_closed.png";
-    image.style.width="100%";
-    const nestedTitle = animations.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#BEB1F6";
-    }
+experience.addEventListener("mouseover", () => {
+    document.getElementById("experience_button").src = "../media/main/experience_open.png";
+    experience.querySelector('span').style.color = "#6FF2AD";
+})
+experience.addEventListener("mouseout", () => {
+    document.getElementById("experience_button").src = "../media/main/experience_closed.png";
+    experience.querySelector('span').style.color = "#BEB1F6";
 })
 
-//Illustration Functions
-//#FEFA9B
-illustrations.addEventListener("mouseover", ()=>{
-    const image = document.getElementById("illustrations_button");
-    image.src="../media/main/illustration_open.png";
-    image.style.width="110%";
-    const nestedTitle = illustrations.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#FEFA9B";
-    }
+abilities.addEventListener("mouseover", () => {
+    document.getElementById("abilities_button").src = "../media/main/abilities_open.png";
+    abilities.querySelector('span').style.color = "#6794FD";
+})
+abilities.addEventListener("mouseout", () => {
+    document.getElementById("abilities_button").src = "../media/main/abilities_closed.png";
+    abilities.querySelector('span').style.color = "#BEB1F6";
 })
 
-illustrations.addEventListener("mouseout", ()=>{
-    const image = document.getElementById("illustrations_button");
-    image.src="../media/main/illustration_closed.png";
-    image.style.width="100%";
-    const nestedTitle = illustrations.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#BEB1F6";
-    }
+contact.addEventListener("mouseover", () => {
+    document.getElementById("contact_button").src = "../media/main/contact_open.png";
+    contact.querySelector('span').style.color = "#E488F1";
 })
-
-
-//Experience Functions
-//#6FF2AD
-experience.addEventListener("mouseover", ()=>{
-    const image = document.getElementById("experience_button");
-    image.src="../media/main/experience_open.png";
-    image.style.width="110%";
-    const nestedTitle = experience.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#6FF2AD";
-    }
-})
-
-experience.addEventListener("mouseout", ()=>{
-    const image = document.getElementById("experience_button");
-    image.src="../media/main/experience_closed.png";
-    image.style.width="100%";
-    const nestedTitle = experience.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#BEB1F6";
-    }
-})
-
-
-//Abilities Functions
-//#6794FD
-abilities.addEventListener("mouseover", ()=>{
-    const image = document.getElementById("abilities_button");
-    image.src="../media/main/abilities_open.png";
-    image.style.width="110%";
-    const nestedTitle = abilities.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#6794FD";
-    }
-})
-
-abilities.addEventListener("mouseout", ()=>{
-    const image = document.getElementById("abilities_button");
-    image.src="../media/main/abilities_closed.png";
-    image.style.width="100%";
-    const nestedTitle = abilities.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#BEB1F6";
-    }
-})
-
-
-//Contact Functions
-//#E488F1
-contact.addEventListener("mouseover", ()=>{
-    const image = document.getElementById("contact_button");
-    image.src="../media/main/contact_open.png";
-    image.style.width="110%";
-    const nestedTitle = contact.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#E488F1";
-    }
-})
-
-contact.addEventListener("mouseout", ()=>{
-    const image = document.getElementById("contact_button");
-    image.src="../media/main/contact_closed.png";
-    image.style.width="100%";
-    const nestedTitle = contact.querySelector('span');
-    if(nestedTitle){
-        nestedTitle.style.color="#BEB1F6";
-    }
+contact.addEventListener("mouseout", () => {
+    document.getElementById("contact_button").src = "../media/main/contact_closed.png";
+    contact.querySelector('span').style.color = "#BEB1F6";
 })
